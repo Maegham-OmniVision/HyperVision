@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload GLB File</title>
+</head>
+<body>
+    <h1>Upload GLB File for AR Viewing</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="model" accept=".glb" required>
+        <button type="submit">Upload</button>
+    </form>
+    <% if (qrCodeUrl) { %>
+        <h2>Scan QR Code to View in AR:</h2>
+        <img src="<%= qrCodeUrl %>" alt="QR Code">
+    <% } %>
+</body>
+</html>
