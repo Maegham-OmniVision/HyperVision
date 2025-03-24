@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>3D Model Viewer with AR</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <model-viewer 
+                src="https://cdn.tinyglb.com/models/3b5d907340d847b7b28734b6651584e4.glb"
+                ar
+                camera-controls
+                environment-image="neutral"
+                poster="https://yourdomain.com/path/to/poster.png"
+                alt="A 3D model of a car">
+            </model-viewer>
+
+
+            <div class="details">
+                <h2>Sheen Chair</h2>
+                <p>⭐️⭐️⭐️⭐️☆</p>
+                <p>Price: Rs. 1000</p>
+                <div class="qr-container">
+                    <p>Scan the QR code for AR View on Mobile</p>
+                    <!-- <img id="qr-image" src="" alt="QR Code"> -->
+                    <div id="qrcode"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+          text: "https://example.com",
+          width: 128,
+          height: 128
+        });
+      </script>
+</body>
+</html>
