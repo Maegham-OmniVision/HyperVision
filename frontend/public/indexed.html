@@ -3,8 +3,9 @@
 <head>
     <title>AR Viewer</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="/menucss.css">
     <style>
-        body, html {
+        /* body, html {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -13,15 +14,54 @@
             justify-content: center;
             align-items: center;
             background-color: #f0f0f0;
-        }
-        model-viewer {
+        } */
+        /* model-viewer {
             width: 100%;
             height: 100%;
-        }
+        } */
     </style>
 </head>
 <body>
-    <model-viewer src="https://cdn.tinyglb.com/models/3b5d907340d847b7b28734b6651584e4.glb" ar ar-modes="scene-viewer quick-look" camera-controls alt="3D model">
+    <h3>heyy!!</h3>
+    <div class="containers">
+        <div class="container" id="small">
+            <div class="col" >
+                <model-viewer src="./assets/3D Crystal.glb" ar ar-modes="scene-viewer quick-look" camera-controls alt="3D model">
+                </model-viewer>
+            </div>
+            <h2>Curd</h2>
+        </div>
+        <div class="container" id="small">
+            <div class="col">
+                <model-viewer src="./assets/BT Speaker.glb" ar ar-modes="scene-viewer quick-look" camera-controls alt="3D model">
+                </model-viewer>
+            </div>
+            <h2>Curd</h2>
+        </div>
+        <div class="container">
+            <div class="col">
+                <model-viewer src="./assets/car.glb" ar ar-modes="scene-viewer quick-look" camera-controls alt="3D model">
+                </model-viewer>
+            </div>
+            <h2>Curd</h2>
+        </div>
+        <div class="container" id="small">
+            <div class="col" >
+                <model-viewer src="./assets/BT Speaker.glb" ar ar-modes="scene-viewer quick-look" camera-controls alt="3D model">
+                </model-viewer>
+            </div>
+            <h2>Curd</h2>
+        </div>
+        <div class="container" id="small">
+            <div class="col" >
+                <model-viewer src="./assets/3D Crystal.glb" ar ar-modes="scene-viewer quick-look" camera-controls alt="3D model">
+                </model-viewer>
+            </div>
+            <h2>Curd</h2>
+        </div>
+        
+    </div>
+    <!-- <model-viewer src="https://cdn.tinyglb.com/models/3b5d907340d847b7b28734b6651584e4.glb" ar ar-modes="scene-viewer quick-look" camera-controls alt="3D model">
         <button slot="ar-button" style="background-color: #000; color: #fff; border: none; padding: 10px; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
             View in your space
         </button>
@@ -35,8 +75,8 @@
         console.log('QR code generated!');
         });
 
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    </script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script> -->
 
 </body>
 </html>
