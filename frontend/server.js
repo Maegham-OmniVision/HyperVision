@@ -39,8 +39,12 @@ mongoose.connect('mongodb://localhost:27017/3dModelsDB', {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Route to serve 'indexed.html' at '/hello'
-app.get('/hello', (req, res) => {
+app.get('/menu', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'indexed.html'));
+});
+
+app.get('/slider', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'slider.html'));
 });
 
 // API routes

@@ -1,0 +1,294 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Flip Card Slider</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        body {
+            background: #1a2a44;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .swiper {
+            width: 80%;
+            height: 450px;
+        }
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 200px;
+            height: 280px;
+            background: white;
+            transition: transform 0.5s, filter 0.5s;
+        }
+        .swiper-slide img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        .swiper-slide p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+        }
+        .swiper-slide:not(.swiper-slide-active) {
+            filter: blur(3px) brightness(0.6);
+            transform: scale(0.85);
+            background: #66d9ff;
+        }
+        .swiper-slide-active {
+            background: #00f7ff;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://source.unsplash.com/100x100/?rock" alt=""><p>Curd</p></div>
+            <div class="swiper-slide"><img src="https://source.unsplash.com/100x100/?cheese" alt=""><p>Curd</p></div>
+            <div class="swiper-slide swiper-slide-active"><img src="https://source.unsplash.com/100x100/?car" alt=""><p>Curd</p></div>
+            <div class="swiper-slide"><img src="https://source.unsplash.com/100x100/?bread" alt=""><p>Curd</p></div>
+            <div class="swiper-slide"><img src="https://source.unsplash.com/100x100/?crystal" alt=""><p>Curd</p></div>
+            <div class="swiper-slide"><img src="https://source.unsplash.com/100x100/?crystal" alt=""><p>thair</p></div>
+            <div class="swiper-slide"><img src="https://source.unsplash.com/100x100/?crystal" alt=""><p>Curd</p></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".swiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 5,
+            spaceBetween: 30,
+            loop: false,
+            initialSlide: 2, 
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 100,
+                depth: 300,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Flip Card Slider</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+    <link rel="stylesheet" href="/slidercss.css">
+</head>
+<body>
+    <video id="video-bg" autoplay playsinline></video>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-front">
+                        <button class="model-button" onclick="startAR(this)"><model-viewer id="arModel" src="/assets/3D Crystal.glb" ar ar-modes="scene-viewer quick-look" auto-rotate rotation-per-second="30deg" alt="3D model"></model-viewer></button>
+                        <button class="flip-button" onclick="flipCard(this)">Dosa</button>
+                    </div>
+                    <div class="card-back">
+                        <p>Details about Payasam</p>
+                        <button class="flip-button" onclick="flipCard(this)">Back</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-front">
+                        <button class="model-button" onclick="startAR(this)"><model-viewer id="arModel" src="/assets/3D Crystal.glb" ar ar-modes="scene-viewer quick-look" auto-rotate rotation-per-second="30deg" alt="3D model"></model-viewer></button>
+                        <button class="flip-button" onclick="flipCard(this)">Idly</button>
+                    </div>
+                    <div class="card-back">
+                        <p>Details about Payasam</p>
+                        <button class="flip-button" onclick="flipCard(this)">Back</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-front">
+                        <button class="model-button" onclick="startAR(this)"><model-viewer id="arModel" src="/assets/car.glb" ar ar-modes="scene-viewer quick-look" auto-rotate rotation-per-second="30deg" alt="3D model"></model-viewer></button>
+                        <button class="flip-button" onclick="flipCard(this)">Sambar</button>
+                    </div>
+                    <div class="card-back">
+                        <p>Details about Payasam</p>
+                        <button class="flip-button" onclick="flipCard(this)">Back</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-front">
+                        <button class="model-button" onclick="startAR(this)"><model-viewer id="arModel" src="/assets/3D Crystal.glb" ar ar-modes="scene-viewer quick-look" auto-rotate rotation-per-second="30deg" alt="3D model"></model-viewer></button>
+                        <button class="flip-button" onclick="flipCard(this)">Chutney</button>
+                    </div>
+                    <div class="card-back">
+                        <p>Details about Payasam</p>
+                        <button class="flip-button" onclick="flipCard(this)">Back</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-front">
+                        <button class="model-button" onclick="startAR(this)"><model-viewer id="arModel" src="/assets/3D Crystal.glb" ar ar-modes="scene-viewer quick-look" auto-rotate rotation-per-second="30deg" alt="3D model"></model-viewer></button>
+                        <button class="flip-button" onclick="flipCard(this)">Pongal</button>
+                    </div>
+                    <div class="card-back">
+                        <p>Details about Payasam</p>
+                        <button class="flip-button" onclick="flipCard(this)">Back</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-front">
+                        <button class="model-button" onclick="startAR(this)"><model-viewer id="arModel" src="/assets/3D Crystal.glb" ar ar-modes="scene-viewer quick-look" auto-rotate rotation-per-second="30deg" alt="3D model"></model-viewer></button>
+                        <button class="flip-button" onclick="flipCard(this)">Briyani</button>
+                    </div>
+                    <div class="card-back">
+                        <p>Details about Payasam</p>
+                        <button class="flip-button" onclick="flipCard(this)">Back</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-front">
+                        <button class="model-button" onclick="startAR(this)"><model-viewer id="arModel" src="/assets/3D Crystal.glb" ar ar-modes="scene-viewer quick-look" auto-rotate rotation-per-second="30deg" alt="3D model"></model-viewer></button>
+                        <button class="flip-button" onclick="flipCard(this)">Egg omelette</button>
+                    </div>
+                    <div class="card-back">
+                        <p>Details about Payasam</p>
+                        <button class="flip-button" onclick="flipCard(this)">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    loop: false,
+    initialSlide: 2,
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            coverflowEffect: {
+                depth: 50,
+                modifier: 1
+            }
+        },
+        480: {
+            slidesPerView: 1.5,
+            spaceBetween: 15
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        1024: {
+            slidesPerView: 5,
+            spaceBetween: 30
+        }
+    },
+    on: {
+        slideChange: function () {
+            let slides = document.querySelectorAll(".swiper-slide");
+            slides.forEach((slide, index) => {
+                if (index < this.activeIndex - 2 || index > this.activeIndex + 2) {
+                    slide.style.visibility = "hidden";
+                } else {
+                    slide.style.visibility = "visible";
+                }
+
+                let buttons = slide.querySelectorAll("button");
+                if (index === this.activeIndex) {
+                    buttons.forEach(button => button.disabled = false);
+                } else {
+                    buttons.forEach(button => button.disabled = true);
+                }
+            });
+        }
+    }
+});
+    </script>
+    <script>
+         function flipCard(button) {
+            const card = button.closest('.card');
+            card.classList.toggle('flipped');
+        }
+        function startAR(button) {
+            // let modelViewer = button.querySelector('model-viewer');
+            let modelViewer = document.getElementById("arModel");
+            if (modelViewer.canActivateAR) {
+                modelViewer.activateAR();
+            } else {
+                alert("AR is not supported on this device.");
+            }
+        }
+
+    </script>
+    <script type="module" src="/assets/js/model-viewer.min.js"></script>
+    <!-- <script id="camera-background">
+        async function enableCamera() {
+            const video = document.getElementById('video-bg');
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+                video.srcObject = stream;
+            } catch (error) {
+                console.error("Error accessing camera:", error);
+            }
+        }
+        enableCamera();
+    </script> -->
+    
+</body>
+</html>
